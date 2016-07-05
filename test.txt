@@ -1,324 +1,324 @@
-- https://alchemy-language-demo.mybluemix.net/
-- https://sourcegraph.com/
-  - pysonar
-- prolog is kind of along these lines
-  - sql
-  - prolog gui?
-    - http://lambda-the-ultimate.org/node/4001
-      - xpce
-- computer assisted programming
-  - http://groups.csail.mit.edu/cap/
-    - sketch
-      - do we want something like this?
-        - so how would the code search work?
-          - "30x30 matrix"
-          - "For each cell, there is a 10% chance it has a mine on it"
-            - for is a key word
-          - code
-            - for r...  for c...  matrix.push
-            - for cell in grid ...
-          - so one module calls it matrix and one calls it grid
-            - uniform terminology?
-              - synonym handler?
-                - matrix array2d array_2 arr board tiles g b
-                - try replacing one var name with a corresponding one then run and check outputs
-        - will probably want to customize the functions in some way
-          - searching would be a big enough of a step up to be worth it by itself?
-            - still going to have to understand the code?
-              - not having to write it would be a significant step forward
-              - as long as the output is right and it's fast enough it's fine?
-                - could be side-effects
-                  - purely functional language?
-        - or do we want the code search approach?
-        - the idea is to minimize the amount of work involved in programming
-          - code search would probably have the most impact
-          - automatically stitching modules together might be cool though
-            - would work for functional languages, but what about those that rely on state?
-              - could limit search to functional languages
-- automatic programming
-- http://www.primaryobjects.com/2013/01/27/using-artificial-intelligence-to-write-self-modifying-improving-programs/
-  - 10 hours
-  - outputs a string
-  - run in sandbox
-  - https://www.reddit.com/r/programming/comments/17fe6q/your_ai_overlords_will_program_in_brainfck/
-  - http://www.primaryobjects.com/2015/01/05/self-programming-artificial-intelligence-learns-to-use-functions/
-  - https://people.csail.mit.edu/asolar/
-- learn about AI 1
-  - how?
-    - https://en.wikipedia.org/wiki/Artificial_intelligence
-      - greater emphasis on solving specific subproblems
-      - solid mathematical methods
-      - rigorous scientific standards
-    - expert system
-      - provide inputs
-      - get suggested approach
-        - next level after stackoverflow
-        - http://programmers.stackexchange.com/questions/41798/programming-an-expert-system
-    - coursera
-  - https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/
-- planning
-- https://www.haskell.org/hoogle/
-- https://news.ycombinator.com/item?id=11335766 2
-  - links
-    - https://github.com/ternjs/acorn
-    - http://codemirror.net/
-    - https://marijnhaverbeke.nl/
-    - http://esprima.org/
-    - http://ariya.ofilabs.com/about
-    - https://github.com/lbdremy/solr-node-client
-    - https://github.com/joshaven/string_score
-  - autocomplete on AST
-    - affected by names of vars
-- Constraint solver
-  - Prolog
-    - https://github.com/jcoder58/PrologTutorials/blob/master/README.md
-    - https://news.ycombinator.com/item?id=8305486 Rethinking Prolog
-    - http://cdn.preterhuman.net/texts/computing/programming/Prolog/The%20Art%20of%20Prolog%20%202nd%20Ed%20-%20Leon%20Sterling%20,%20Ehud%20Shapiro.pdf
-  - what is this all about?
-    - https://en.wikipedia.org/wiki/Constraint_satisfaction_problem
-      - https://en.wikipedia.org/wiki/Constraint_satisfaction
-        - backtracking
-        - local search
-          - https://en.wikipedia.org/wiki/Local_search_(constraint_satisfaction)
-- "programming in a higher-level language than the one available" 1
-  - what would be higher level than functions?
-    - natural language
-    - a program
-      - a collection of functions
-        - isn't that the same thing as a function?
-        - maybe I just want a global collection of functions
-          - with google style search so people can find them
-            - so maybe what I'm really building is a search language for functions
-              - search for "30x30 matrix"
-                - got some code for it
-    - example
-      - code
-        - for var r = 0; r < 30; r++
-          - for var c = 0; c < 30; c++
-            - row.push({})
-      - higher-level
-        - Grid
-          - just a function
-            - grid = function grid() { for r...  for c... }
-- neural network where the input is keystrokes
-  - or legal tokens
-    - combine them in random order
-      - how do neural networks work?
-        - what is a recurrent neural network?
-        - what is deep learning?
-          - it's just scaled up neural networks?
-  - pull a bunch of code from github
-    - try to make something that looks like that
-      - the code we want here would be much smaller than a random file on github
-        - notion of large vs small
-          - hook into exisiting AI code
-- how would this work for something like modifying gigwalk?
-  - port certs to association table
-    - maybe it would just of stuck with the org_cust_meta table
-    - write migration
-    - the old data structure needs to be modified in order to add new functionality
-      - maybe data would not have to be arranged logically
-        - just take these arbitrary bytes and assign them
-          - let machine learning do the rest
-          - following the deep learning approach
-          - run the thing in a vm?
-            - an isolated env so it won't wipe prod db?
-- reminds me of that coding with buttons thing I was working on at one point
-- translate natural language into code
-  - fuzzy commands
-    - grid of buttons
-      - map "read from a file" -> "read file"
-- example
-  - minesweeper
-    - grid of buttons
-  - build this with itself
-    - input is commands
-    - ???
-      - substeps
-        - interpret command
-          - input: "turn words into code"
-        - generate code
-      - stub
-        - if command == 'turn words into code"
+https://alchemy-language-demo.mybluemix.net/
+https://sourcegraph.com/
+  pysonar
+prolog is kind of along these lines
+  sql
+  prolog gui?
+    http://lambda-the-ultimate.org/node/4001
+      xpce
+computer assisted programming
+  http://groups.csail.mit.edu/cap/
+    sketch
+      do we want something like this?
+        so how would the code search work?
+          "30x30 matrix"
+          "For each cell, there is a 10% chance it has a mine on it"
+            for is a key word
+          code
+            for r...  for c...  matrix.push
+            for cell in grid ...
+          so one module calls it matrix and one calls it grid
+            uniform terminology?
+              synonym handler?
+                matrix array2d array_2 arr board tiles g b
+                try replacing one var name with a corresponding one then run and check outputs
+        will probably want to customize the functions in some way
+          searching would be a big enough of a step up to be worth it by itself?
+            still going to have to understand the code?
+              not having to write it would be a significant step forward
+              as long as the output is right and it's fast enough it's fine?
+                could be side-effects
+                  purely functional language?
+        or do we want the code search approach?
+        the idea is to minimize the amount of work involved in programming
+          code search would probably have the most impact
+          automatically stitching modules together might be cool though
+            would work for functional languages, but what about those that rely on state?
+              could limit search to functional languages
+automatic programming
+http://www.primaryobjects.com/2013/01/27/using-artificial-intelligence-to-write-self-modifying-improving-programs/
+  10 hours
+  outputs a string
+  run in sandbox
+  https://www.reddit.com/r/programming/comments/17fe6q/your_ai_overlords_will_program_in_brainfck/
+  http://www.primaryobjects.com/2015/01/05/self-programming-artificial-intelligence-learns-to-use-functions/
+  https://people.csail.mit.edu/asolar/
+learn about AI 1
+  how?
+    https://en.wikipedia.org/wiki/Artificial_intelligence
+      greater emphasis on solving specific subproblems
+      solid mathematical methods
+      rigorous scientific standards
+    expert system
+      provide inputs
+      get suggested approach
+        next level after stackoverflow
+        http://programmers.stackexchange.com/questions/41798/programming-an-expert-system
+    coursera
+  https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/
+planning
+https://www.haskell.org/hoogle/
+https://news.ycombinator.com/item?id=11335766 2
+  links
+    https://github.com/ternjs/acorn
+    http://codemirror.net/
+    https://marijnhaverbeke.nl/
+    http://esprima.org/
+    http://ariya.ofilabs.com/about
+    https://github.com/lbdremy/solr-node-client
+    https://github.com/joshaven/string_score
+  autocomplete on AST
+    affected by names of vars
+Constraint solver
+  Prolog
+    https://github.com/jcoder58/PrologTutorials/blob/master/README.md
+    https://news.ycombinator.com/item?id=8305486 Rethinking Prolog
+    http://cdn.preterhuman.net/texts/computing/programming/Prolog/The%20Art%20of%20Prolog%20%202nd%20Ed%20-%20Leon%20Sterling%20,%20Ehud%20Shapiro.pdf
+  what is this all about?
+    https://en.wikipedia.org/wiki/Constraint_satisfaction_problem
+      https://en.wikipedia.org/wiki/Constraint_satisfaction
+        backtracking
+        local search
+          https://en.wikipedia.org/wiki/Local_search_(constraint_satisfaction)
+"programming in a higher-level language than the one available" 1
+  what would be higher level than functions?
+    natural language
+    a program
+      a collection of functions
+        isn't that the same thing as a function?
+        maybe I just want a global collection of functions
+          with google style search so people can find them
+            so maybe what I'm really building is a search language for functions
+              search for "30x30 matrix"
+                got some code for it
+    example
+      code
+        for var r = 0; r < 30; r++
+          for var c = 0; c < 30; c++
+            row.push({})
+      higher-level
+        Grid
+          just a function
+            grid = function grid() { for r...  for c... }
+neural network where the input is keystrokes
+  or legal tokens
+    combine them in random order
+      how do neural networks work?
+        what is a recurrent neural network?
+        what is deep learning?
+          it's just scaled up neural networks?
+  pull a bunch of code from github
+    try to make something that looks like that
+      the code we want here would be much smaller than a random file on github
+        notion of large vs small
+          hook into exisiting AI code
+how would this work for something like modifying gigwalk?
+  port certs to association table
+    maybe it would just of stuck with the org_cust_meta table
+    write migration
+    the old data structure needs to be modified in order to add new functionality
+      maybe data would not have to be arranged logically
+        just take these arbitrary bytes and assign them
+          let machine learning do the rest
+          following the deep learning approach
+          run the thing in a vm?
+            an isolated env so it won't wipe prod db?
+reminds me of that coding with buttons thing I was working on at one point
+translate natural language into code
+  fuzzy commands
+    grid of buttons
+      map "read from a file" -> "read file"
+example
+  minesweeper
+    grid of buttons
+  build this with itself
+    input is commands
+    ???
+      substeps
+        interpret command
+          input: "turn words into code"
+        generate code
+      stub
+        if command == 'turn words into code"
           -
-    - output is code
-  - make web app
-    - <generate flask web app>
-- start with curl generator
-- learn to use libraries
-  - maybe an AI could build its own?
-  - ask for help
-- code generation
-  - quickly build and evaluate combinations of tokens
-    - all possible python programs
-      - breadth first
-      - score them by proximity to real code
-- read-modify-write loop for code 3
-  - modify would be the hard part 3
-    - adding another component which understands the code 3
-      - generate input examples and see what happens 3
-        - make a request to every endpoint in a web app 3
-          - would take a while
-          - and see what happens
-          - try this with gigwalk codebase
-            - there's probably software that does this
-            - could be dangerous
-              - what if one endpoint wipes the db?
-                - can I insert a breakpoint or something to guarentee that nothing will happen?
-          - computer assisted programming
-      - easier to just generate from scratch every time?
-        - not easier for a human that way
-          - but maybe easier for a computer
-- maybe it would be better to start as a consultancy 10v / 7h
-  - stackoverflow for actual working code 7
-    - building a software product is pretty expensive
-      - $100K for a fairly simple thing
-      - maybe there's a market for trivial things
-        - I bet I could build minesweeper in a day
-          - 10 hours * $100 = $1000 * 3 = $3000
-            - $300 would be a big gain
-    - archive of software
-    - everything open source so others can review it?
-      - would take a ton of time for that
-      - why pay for it when anyone else can immediately start using it?
-    - pretty similar to odesk type sites
-      - what are people asking for?
-      - make a version where i own the code produced by all the programmers
-        - wouldn't the clients want to own the code?
-          - maybe the client owns it and licenses it to the business
-            - and the creator as well
-          - how would the business model work there?
-      - https://blog.codinghorror.com/can-you-really-rent-a-coder/
-        - "as a coding assistant they work great"
-      - rent-a-coder
-      - upwork (formerly odesk)
-      - Elance
-      - guru.com
-      - could I post jobs on these sites and stitch together modules to build gigwalk?
-        - find an sqlalchemy expert
-        - rate the coders
-        - try getting other people to build cardbrew
-  - and then add automation over time
-  - if you took all the software created by all consultants there would be a lot of overlap
-    - people write code when they could be reusing code from github
-      - discoverability
-  - would be tough to add automation if i'm spending all my time working normaly
-- program synthesis 1
-  - http://research.microsoft.com/en-us/um/people/sumitg/pubs/synthesis.html
-    - http://research.microsoft.com/en-us/um/people/sumitg/
-    - http://research.microsoft.com/en-us/um/people/sumitg/pubs/cacm14.pdf
-      - Example-based reasoning
-        - computer-aided programming
-        - analyze programs
-          - find bugs through test-input-generation
-        - prove correctness
-          -  inductive reasoning or random examples
-        - synthesize programs through input/output examples or demonstrations
-      - automate certain repetitive and structured tasks in education
-        - problem generation
-        - solution generation
-        - feedback generation
-      - subject domains
-        - logic
-        - automata theory
-        - programming
-        - arithmetic
-        - algebra
-        - geometry
-      - Procedural vs. conceptual problems
-- natural language programming 1
-  - https://en.wikipedia.org/wiki/Natural_language_programming 1
-    - https://en.wikipedia.org/wiki/Attempto_Controlled_English 1
-  - https://www.cs.utexas.edu/users/EWD/transcriptions/EWD06xx/EWD667.html
-    - formal languages make programming easier
-  - http://stackoverflow.com/questions/491971/what-programming-language-is-most-like-natural-language
-  - Inform 7 1
-    - https://en.wikipedia.org/wiki/Inform
-    - http://inform7.com/
-  - Wolfram Alpha
-- Orange Data Mining Toolkit 2
-  - https://news.ycombinator.com/item?id=12027635
-  - visual data mining / machine learning / visualization toolkit
-  - looks pretty cool
-    - good for learning at least
-  - related software
-    - SAS EG
-    - Rapidminer
-    - SPSS
-    - Matlab
-    - Pandas
-    - Weka
-    - KNIMe
-- SAS NLP 3
-  - http://blogs.sas.com/content/text-mining/
-  - http://blogs.sas.com/content/text-mining/2013/12/20/behind-the-scenes-in-natural-language-processing-is-machine-learning-the-answer/
-- wfuzz 3
-  - find a tutorial or something
-    - http://sectools.org/
-      - wireshark 3
-  - -h
-    - -e <type>     : List of available encoders/payloads/iterators/printers/scripts
-  - wfuzz.py
-    - -p proxy
-  - https://github.com/xmendez/wfuzz
-- https://github.com/larsyencken/marelle 4
-  - use it to setup gigwalk backend?
-    - how do we know if it's met?
-      - if the code exists?
-        - and we can run it?
-          - curl localhost?
-- lisp 6
-  - http://www.paulgraham.com/avg.html 6
-    - lisp is better because it has macros
-      - can build infinitely high level languages with it?
-    - "On Lisp"
-      - Doesn't seem to have taken off like pg thought it would.
-        - Because libraries are most important?
-          - which means popularity is most important?
-- NLP 7
-  - Heavy Metal and Natural Language Processing 1
-    - https://news.ycombinator.com/item?id=12024920
-    - questions
-      - are there any ideas here that I won't find many other places?
-      - how do all these techniques work?
-      - is this actually good enough to be useful?
-      - can this stuff be applied to pulling interesting words out of that other doc?
-      - how does this relate to the idea of generating code from a natural language query?
-  - How to create NBA shot charts in Python 6
-    - https://news.ycombinator.com/item?id=9979683
-    - Constructing an Interactive Natural Language Interface for Relational Databases
-      - http://www.vldb.org/pvldb/vol8/p73-li.pdf
-      - questions
-        - can I use nailir has a black box?
-          - doesn't look like it
-          - https://taku910.github.io/crfpp/
-          - https://github.com/chenzheruc/spreadsheet_framefinder
-        - does this work well?
-        - what field of study would this fall under?
-        - am i going to be able to understand the math here?
-        - how is this going to handle ambiguities in the english language?
-        - could this apply to code search?
-        - We have constructed a system, NaLIR (Natural Language Interface for Relational databases), embodying these ideas.
-- Deep API 24
-  - https://news.ycombinator.com/item?id=11800162
-    - summary
-      - "Developers can also perform a code search over an open source repository such as GitHub and then utilize an API usage pattern miner to obtain the appropriate API sequences."
-        - J. Fowkes and C. Sutton. Parameter-free probabilistic API mining at github scale. In Proceedings of the ACM SIGSOFT 24th International Symposium on the Foundations of Software Engineering. ACM, 2016.
-        - J. Wang, Y. Dang, H. Zhang, K. Chen, T. Xie, and D. Zhang. Mining succinct and high-coverage API usage patterns from source code. In Proceedings of the 10th Working Conference on Mining Software Repositories, pages 319–328. IEEE Press, 2013
-        - T. Xie and J. Pei. MAPO: Mining API usages from open source repositories. In Proceedings of the 2006 international workshop on Mining software repositories (MSR), pages 54–57. ACM, 2006.
-      - "search engines are often inefficient and inaccurate for programming tasks"
-        - J. Stylos and B. A. Myers. Mica: A web-search tool for finding API components and examples. In Proceedings of the Visual Languages and Human-Centric Computing (VLHCC ’06), pages 195–202, 2006.
-      - "most of search engines are based on keyword matching without considering the semantics of natural language queries"
-        - R. Holmes, R. Cottrell, R. J. Walker, and J. Denzinger. The end-to-end use of source code examples: An exploratory study. In Software Maintenance, 2009. ICSM 2009. IEEE International Conference on, pages 555–558. IEEE, 2009.
-      - "Raghothaman et al. proposed SWIM, which translates a natural language query to a list of possible APIs using a statistical word alignment model "
-        - "How- ever, the statistical word alignment model it utilizes is based on a bag-of-word assumption without considering the se- quence of words and APIs."
-        - "it is difficult to distinguish the query convert int to string from convert string to int."
-        - M. Raghothaman, Y. Wei, and Y. Hamadi. SWIM: Synthesizing what I mean. In Proceedings of The 38th International Conference on Software Engineering (ICSE), 2016.
-        - P. F. Brown, V. J. D. Pietra, S. A. D. Pietra, and R. L. Mercer. The mathematics of statistical machine translation: Parameter estimation. Computational linguistics, 19(2):263–311, 1993.
-    - deep learning
-      - what is it?
-        - multiple layers
-        - features
-        - neural networks
-        - "non-linear transformations"
-          - a linear transformation
+    output is code
+  make web app
+    <generate flask web app>
+start with curl generator
+learn to use libraries
+  maybe an AI could build its own?
+  ask for help
+code generation
+  quickly build and evaluate combinations of tokens
+    all possible python programs
+      breadth first
+      score them by proximity to real code
+read-modify-write loop for code 3
+  modify would be the hard part 3
+    adding another component which understands the code 3
+      generate input examples and see what happens 3
+        make a request to every endpoint in a web app 3
+          would take a while
+          and see what happens
+          try this with gigwalk codebase
+            there's probably software that does this
+            could be dangerous
+              what if one endpoint wipes the db?
+                can I insert a breakpoint or something to guarentee that nothing will happen?
+          computer assisted programming
+      easier to just generate from scratch every time?
+        not easier for a human that way
+          but maybe easier for a computer
+maybe it would be better to start as a consultancy 10v / 7h
+  stackoverflow for actual working code 7
+    building a software product is pretty expensive
+      $100K for a fairly simple thing
+      maybe there's a market for trivial things
+        I bet I could build minesweeper in a day
+          10 hours * $100 = $1000 * 3 = $3000
+            $300 would be a big gain
+    archive of software
+    everything open source so others can review it?
+      would take a ton of time for that
+      why pay for it when anyone else can immediately start using it?
+    pretty similar to odesk type sites
+      what are people asking for?
+      make a version where i own the code produced by all the programmers
+        wouldn't the clients want to own the code?
+          maybe the client owns it and licenses it to the business
+            and the creator as well
+          how would the business model work there?
+      https://blog.codinghorror.com/can-you-really-rent-a-coder/
+        "as a coding assistant they work great"
+      rent-a-coder
+      upwork (formerly odesk)
+      Elance
+      guru.com
+      could I post jobs on these sites and stitch together modules to build gigwalk?
+        find an sqlalchemy expert
+        rate the coders
+        try getting other people to build cardbrew
+  and then add automation over time
+  if you took all the software created by all consultants there would be a lot of overlap
+    people write code when they could be reusing code from github
+      discoverability
+  would be tough to add automation if i'm spending all my time working normaly
+program synthesis 1
+  http://research.microsoft.com/en-us/um/people/sumitg/pubs/synthesis.html
+    http://research.microsoft.com/en-us/um/people/sumitg/
+    http://research.microsoft.com/en-us/um/people/sumitg/pubs/cacm14.pdf
+      Example-based reasoning
+        computer-aided programming
+        analyze programs
+          find bugs through test-input-generation
+        prove correctness
+           inductive reasoning or random examples
+        synthesize programs through input/output examples or demonstrations
+      automate certain repetitive and structured tasks in education
+        problem generation
+        solution generation
+        feedback generation
+      subject domains
+        logic
+        automata theory
+        programming
+        arithmetic
+        algebra
+        geometry
+      Procedural vs. conceptual problems
+natural language programming 1
+  https://en.wikipedia.org/wiki/Natural_language_programming 1
+    https://en.wikipedia.org/wiki/Attempto_Controlled_English 1
+  https://www.cs.utexas.edu/users/EWD/transcriptions/EWD06xx/EWD667.html
+    formal languages make programming easier
+  http://stackoverflow.com/questions/491971/what-programming-language-is-most-like-natural-language
+  Inform 7 1
+    https://en.wikipedia.org/wiki/Inform
+    http://inform7.com/
+  Wolfram Alpha
+Orange Data Mining Toolkit 2
+  https://news.ycombinator.com/item?id=12027635
+  visual data mining / machine learning / visualization toolkit
+  looks pretty cool
+    good for learning at least
+  related software
+    SAS EG
+    Rapidminer
+    SPSS
+    Matlab
+    Pandas
+    Weka
+    KNIMe
+SAS NLP 3
+  http://blogs.sas.com/content/text-mining/
+  http://blogs.sas.com/content/text-mining/2013/12/20/behind-the-scenes-in-natural-language-processing-is-machine-learning-the-answer/
+wfuzz 3
+  find a tutorial or something
+    http://sectools.org/
+      wireshark 3
+  -h
+    -e <type>     : List of available encoders/payloads/iterators/printers/scripts
+  wfuzz.py
+    -p proxy
+  https://github.com/xmendez/wfuzz
+https://github.com/larsyencken/marelle 4
+  use it to setup gigwalk backend?
+    how do we know if it's met?
+      if the code exists?
+        and we can run it?
+          curl localhost?
+lisp 6
+  http://www.paulgraham.com/avg.html 6
+    lisp is better because it has macros
+      can build infinitely high level languages with it?
+    "On Lisp"
+      Doesn't seem to have taken off like pg thought it would.
+        Because libraries are most important?
+          which means popularity is most important?
+NLP 7
+  Heavy Metal and Natural Language Processing 1
+    https://news.ycombinator.com/item?id=12024920
+    questions
+      are there any ideas here that I won't find many other places?
+      how do all these techniques work?
+      is this actually good enough to be useful?
+      can this stuff be applied to pulling interesting words out of that other doc?
+      how does this relate to the idea of generating code from a natural language query?
+  How to create NBA shot charts in Python 6
+    https://news.ycombinator.com/item?id=9979683
+    Constructing an Interactive Natural Language Interface for Relational Databases
+      http://www.vldb.org/pvldb/vol8/p73-li.pdf
+      questions
+        can I use nailir has a black box?
+          doesn't look like it
+          https://taku910.github.io/crfpp/
+          https://github.com/chenzheruc/spreadsheet_framefinder
+        does this work well?
+        what field of study would this fall under?
+        am i going to be able to understand the math here?
+        how is this going to handle ambiguities in the english language?
+        could this apply to code search?
+        We have constructed a system, NaLIR (Natural Language Interface for Relational databases), embodying these ideas.
+Deep API 24
+  https://news.ycombinator.com/item?id=11800162
+    summary
+      "Developers can also perform a code search over an open source repository such as GitHub and then utilize an API usage pattern miner to obtain the appropriate API sequences."
+        J. Fowkes and C. Sutton. Parameter-free probabilistic API mining at github scale. In Proceedings of the ACM SIGSOFT 24th International Symposium on the Foundations of Software Engineering. ACM, 2016.
+        J. Wang, Y. Dang, H. Zhang, K. Chen, T. Xie, and D. Zhang. Mining succinct and high-coverage API usage patterns from source code. In Proceedings of the 10th Working Conference on Mining Software Repositories, pages 319–328. IEEE Press, 2013
+        T. Xie and J. Pei. MAPO: Mining API usages from open source repositories. In Proceedings of the 2006 international workshop on Mining software repositories (MSR), pages 54–57. ACM, 2006.
+      "search engines are often inefficient and inaccurate for programming tasks"
+        J. Stylos and B. A. Myers. Mica: A web-search tool for finding API components and examples. In Proceedings of the Visual Languages and Human-Centric Computing (VLHCC ’06), pages 195–202, 2006.
+      "most of search engines are based on keyword matching without considering the semantics of natural language queries"
+        R. Holmes, R. Cottrell, R. J. Walker, and J. Denzinger. The end-to-end use of source code examples: An exploratory study. In Software Maintenance, 2009. ICSM 2009. IEEE International Conference on, pages 555–558. IEEE, 2009.
+      "Raghothaman et al. proposed SWIM, which translates a natural language query to a list of possible APIs using a statistical word alignment model "
+        "However, the statistical word alignment model it utilizes is based on a bag-of-word assumption without considering the sequence of words and APIs."
+        "it is difficult to distinguish the query convert int to string from convert string to int."
+        M. Raghothaman, Y. Wei, and Y. Hamadi. SWIM: Synthesizing what I mean. In Proceedings of The 38th International Conference on Software Engineering (ICSE), 2016.
+        P. F. Brown, V. J. D. Pietra, S. A. D. Pietra, and R. L. Mercer. The mathematics of statistical machine translation: Parameter estimation. Computational linguistics, 19(2):263–311, 1993.
+    deep learning
+      what is it?
+        multiple layers
+        features
+        neural networks
+        "non-linear transformations"
+          a linear transformation
