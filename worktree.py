@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 import re, os
 
+'''
+Read file containing tree of indented strings following a simple format.
+Parse out metadata from each line.
+Do some processing on these nodes and write them back out with updated metadata.
+'''
 
 with open(os.path.expanduser('~/Dropbox/worktree.txt')) as f:
   text = f.read()
