@@ -31,3 +31,12 @@ Or:
                                 individual hours
 
 Metadata is parsed and updated every time you run worktree.py
+
+Usage Tips:
+
+I use Sublime Text to view and edit my worktree.txt file.
+The first thing I do upon opening the file is fold everything, like so:
+  Edit -> Code Folding -> Fold All (Cmd K, Cmd 1)
+  (I think you have to have the cursor on the top line of text for this to work.)
+  I then do (Cmd K, Cmd 2) and so forth to unfold as needed.
+I keep worktree.txt in my Dropbox so I always have a backup.
