@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-import re
+import re, os
 
 
-with open('input.txt') as f:
+with open(os.path.expanduser('~/Dropbox/worktree.txt')) as f:
   text = f.read()
 
 
@@ -17,7 +17,7 @@ class Node:
 
     def full_meta():
       self.value, self.indiv_hours, self.cum_hours, _ = [
-        float(re.sub('[^0-9\.]', '', s)) for s in match.group(1).split()]
+        float(re.sub('[^0-9\.]', '', s)) for s in match.group(1).replace('/', ' ').split()]
 
     def short_meta():
       self.value, self.indiv_hours = [
@@ -28,13 +28,15 @@ class Node:
       self.indiv_hours = float(match.group(1))
       self.cum_hours = self.indiv_hours
 
+    float_regex = '[0-9][0-9\.]*'
     for meta_regex, parse in (
-      ('([0-9\.]+v [0-9\.]+/[0-9\.]+h \([0-9\.]+\))$', full_meta),
-      ('([0-9\.]+v [0-9\.]+h)$', short_meta),
-      ('([0-9\.]+)$', simple_hours)):
+      (' ({f}v {f}/{f}h \({f}\))$', full_meta),
+      (' ({f}v {f}h)$', short_meta),
+      (' ({f})$', simple_hours)):
+      meta_regex = meta_regex.format(f=float_regex)
       match = re.search(meta_regex, line)
-      if match:
-        parse(match, line)
+      if match and match.group(1).count('.') <= 1:
+        parse()
         self.line = re.sub(meta_regex, '', line)
         break
 
@@ -55,20 +57,28 @@ class Node:
         self.value_per_hour = self.value / self.cum_hours
     self.children.sort(key=lambda node: node.value_per_hour)
 
-  def render_and_print(self):
+  def render_lines(self):
     " Include metadata with line. "
 
-    full_line = '{} {}v {}/{}h ({0:.2f})'.format(
-      self.line, self.value, self.indiv_hours, self.cum_hours)
-    print full_line
+    full_line = self.line
+    if self.value is not None:
+      full_line = '{} {}v {}/{}h ({:.2f})'.format(
+        self.line, self.value, self.indiv_hours, self.cum_hours, self.value_per_hour)
+    full_line = re.sub('^( *)- ', '\g<1>', full_line)
+    yield full_line
     for child in self.children:
-      child.render_and_print()
+      for line in child.render_lines():
+        yield line
 
 
 def build_tree(root_line, line_iter):
   ' Convert indented lines of text to Nodes. '
 
-  root = Node(root_line)
+  try:
+    root = Node(root_line)
+  except:
+    print 'error on line:', root_line
+    raise
   try:
     next_line = line_iter.next()
   except StopIteration:
@@ -92,7 +102,13 @@ def main():
     child, next_line = build_tree(next_line, line_iter)
     top_nodes.append(child)
   for node in top_nodes:
-    calc_meta(node)
+    node.calc_meta()
 
-  for node in top_nodes:
-    node.render_and_print()
+  with open(os.path.expanduser('~/Dropbox/worktree.txt'), 'w') as f:
+    for node in top_nodes:
+      for line in node.render_lines():
+        f.write(line + '\n')
+
+
+if __name__ == '__main__':
+  main()
