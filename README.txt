@@ -37,8 +37,10 @@ Usage Tips:
 I use Sublime Text to view and edit my worktree.txt file.
 The first thing I do upon opening the file is fold everything, like so:
   Edit -> Code Folding -> Fold All (Cmd K, Cmd 1)
-  (I think you have to have the cursor on the top line of text for this to work.)
-  I then do (Cmd K, Cmd 2) and so forth to unfold as needed.
+  I then click on the node I want to expand, then do (Cmd K, Cmd 2), and so forth.
+  Note these fold commands only fold expanded nodes, they won't expand collapsed ones.
+  (I usually click to expand, then use keyboard to fold.)
+
 I keep worktree.txt in my Dropbox so I always have a backup.
 I have a symlink called `wt` to worktree.py in my path, so I can just run `wt` in my terminal
 to regenerate the metadata.

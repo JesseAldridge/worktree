@@ -68,7 +68,7 @@ class Node:
 
     full_line = self.line
     if self.value is not None:
-      full_line = '{} {}v {}/{}h ({:.2f})'.format(
+      full_line = '{} {}v {:.2f}/{:.2f}h ({:.2f})'.format(
         self.line, self.value, self.indiv_hours, self.cum_hours, self.value_per_hour)
     full_line = re.sub('^( *)- ', '\g<1>', full_line)
     yield full_line
