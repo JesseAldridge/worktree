@@ -60,7 +60,7 @@ class Node:
         self.value_per_hour = self.value
       else:
         self.value_per_hour = self.value / self.cum_hours
-    self.children.sort(key=lambda node: node.value_per_hour)
+    self.children.sort(key=lambda node: -node.value_per_hour)
 
   def render_lines(self):
     " Include metadata with line. "
