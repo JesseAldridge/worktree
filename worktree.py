@@ -33,14 +33,14 @@ class Node:
       self.indiv_hours = float(match.group(1))
       self.cum_hours = self.indiv_hours
 
-    float_regex = '[0-9][0-9\.]*'
+    float_regex = '[0-9]+(?:\.?[0-9]*)'
     for meta_regex, parse in (
       (' ({f}v {f}/{f}h \({f}\))$', full_meta),
       (' ({f}v {f}h)$', short_meta),
       (' ({f})$', simple_hours)):
       meta_regex = meta_regex.format(f=float_regex)
       match = re.search(meta_regex, line)
-      if match and match.group(1).count('.') <= 1:
+      if match:
         parse()
         self.line = re.sub(meta_regex, '', line)
         break
