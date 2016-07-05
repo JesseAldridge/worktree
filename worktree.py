@@ -110,7 +110,7 @@ def main():
   for node in top_nodes:
     node.calc_meta()
 
-  with open(os.path.expanduser('~/Dropbox/worktree2.txt'), 'w') as f:
+  with open(os.path.expanduser('~/Dropbox/worktree.txt'), 'w') as f:
     for node in top_nodes:
       for line in node.render_lines():
         f.write(line + '\n')
