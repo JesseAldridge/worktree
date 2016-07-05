@@ -1,6 +1,9 @@
 import worktree
 
 def test_nodes():
+  node = worktree.Node('shrdlu .3')
+  assert node.indiv_hours == .3
+
   node = worktree.Node('learn about potentially relavent stuff 100v 46.0/132.0h (0.00)')
   child = worktree.Node('test 10')
   node.children.append(child)
@@ -28,3 +31,6 @@ def test_nodes():
   node = worktree.Node('    http://lambda-the-ultimate.org/node/4001')
   assert node.line == '    http://lambda-the-ultimate.org/node/4001'
   assert node.value is None
+
+if __name__ == '__main__':
+  test_nodes()

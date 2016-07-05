@@ -34,7 +34,7 @@ class Node:
       self.indiv_hours = float(match.group(1))
       self.cum_hours = self.indiv_hours
 
-    float_regex = '[0-9]+(?:\.?[0-9]*)'
+    float_regex = '[0-9]*\.?[0-9]+'
     for meta_regex, parse in (
       (' ({f}v {f}/{f}h \({f}\))$', full_meta),
       (' ({f}v {f}h)$', short_meta),
@@ -110,7 +110,7 @@ def main():
   for node in top_nodes:
     node.calc_meta()
 
-  with open(os.path.expanduser('~/Dropbox/worktree.txt'), 'w') as f:
+  with open(os.path.expanduser('~/Dropbox/worktree2.txt'), 'w') as f:
     for node in top_nodes:
       for line in node.render_lines():
         f.write(line + '\n')
